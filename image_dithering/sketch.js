@@ -7,7 +7,7 @@ function preload() {
 function setup() {
   createCanvas(1200, 600);
   img.filter(GRAY);
-  image(img, 0, 0);
+  image(img, 0, 0, 600, 600);
   img.loadPixels();
   for(let y = 0; y < img.height; y++) {
     for(let x = 0; x < img.width; x++) {      
@@ -45,7 +45,7 @@ function setup() {
     }
   }
   img.updatePixels();
-  image(img, 600, 0);
+  image(img, 600, 0, 600, 600);
 }
 
 function addErr(errR, errG, errB, x, y) {  
