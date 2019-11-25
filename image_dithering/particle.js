@@ -19,7 +19,8 @@ class Particle {
     }
     
     applyForce(force) {
-        this.velocity.add(force);
+        this.velocity = this.velocity.add(force);
+        this.seek();
     }
     
     show() {        

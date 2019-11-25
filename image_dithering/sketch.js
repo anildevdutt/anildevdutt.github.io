@@ -1,5 +1,6 @@
 let img;
 let particles = [];
+let at;
 
 function preload() {
   img = loadImage("cat.jpg");
@@ -45,6 +46,7 @@ function setup() {
   }
   img.updatePixels();
   //image(img, 600, 0, 600, 600);
+  at = createP('Aclerations');
 }
 
 function addErr(errR, errG, errB, x, y) {  
@@ -60,10 +62,12 @@ function index(x, y)  {
 function draw() {
   background(255);  
   for(let p of particles) {
-    let force = createVector(accelerationX, accelerationY);
-    p.applyForce(force)      
-    p.seek();
+    let force = createVector(random(0, 100), random(0,100));
+    p.applyForce(force);
+    //p.seek();
     p.show();
   }
+  at.elt.innerText = accelerationX + ", " + accelerationY;
+  
 }
 
