@@ -46,7 +46,6 @@ function setup() {
   }
   img.updatePixels();
   //image(img, 600, 0, 600, 600);
-  at = createP('Aclerations');
 }
 
 function addErr(errR, errG, errB, x, y) {  
@@ -61,13 +60,15 @@ function index(x, y)  {
 
 function draw() {
   background(255);  
-  for(let p of particles) {
-    let force = createVector(accelerationX, accelerationY);
-    p.applyForce(force);
-    //p.seek();
+  for(let p of particles) {    
+    p.update();    
     p.show();
-  }
-  at.elt.innerText = accelerationX + ", " + accelerationY;
-  
+  }  
 }
 
+
+function mousePressed() {
+  for(let p of particles) {
+    p.applyForce();
+  }
+}
