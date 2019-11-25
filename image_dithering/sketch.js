@@ -62,7 +62,7 @@ function index(x, y)  {
 function draw() {
   background(255);  
   for(let p of particles) {
-    let force = createVector(random(-10, 10), random(-10,10));
+    let force = createVector(accelerationX, accelerationY);
     p.applyForce(force);
     //p.seek();
     p.show();
