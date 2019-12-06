@@ -7,7 +7,7 @@ let sslider;
 let button;
 let thrstext;
 let scltext;
-let comments = `Copies a region of pixels from one image to another. If no srcImage is specified this is used as the source. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region.Copies a region of pixels from one image to another. If no srcImage is specified this is used as the source. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region.Copies a region of pixels from one image to another. If no srcImage is specified this is used as the source. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region.Copies a region of pixels from one image to another. If no srcImage is specified this is used as the source. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region.Copies a region of pixels from one image to another. If no srcImage is specified this is used as the source. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region.Copies a region of pixels from one image to another. If no srcImage is specified this is used as the source. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region.Copies a region of pixels from one image to another. If no srcImage is specified this is used as the source. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region.Copies a region of pixels from one image to another. If no srcImage is specified this is used as the source. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region.`;
+let comments = `abcdefghijklmnopqrstuvwxyz`;
 let cmts = [];
 let pos = -1;
 
@@ -52,7 +52,7 @@ function setup() {
     button = createButton('Download Image');
     button.mousePressed(downloadImg);
 
-    imgMain.resize(0, 300);
+    imgMain.resize(0, 100);
 
     w2i();
 }
@@ -82,8 +82,7 @@ function w2i() {
     img.updatePixels();    
     resizeCanvas(wimg.width, wimg.height);
     image(wimg, 0, 0);
-    
-    //saveCanvas(wimg, "wordimg", "jpg");
+
 }
 
 function updateImg() {
@@ -99,7 +98,3 @@ function updateImg() {
 function downloadImg() {
     saveCanvas(wimg, "wordimg", "jpg");
 }
-
-// function draw() {
-//     //w2i();
-// }   
