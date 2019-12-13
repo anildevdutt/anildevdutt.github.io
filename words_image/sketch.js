@@ -52,7 +52,7 @@ function setup() {
     button = createButton('Download Image');
     button.mousePressed(downloadImg);
 
-    imgMain.resize(0, 100);
+    imgMain.resize(0, 300);
 
     w2i();
 }
