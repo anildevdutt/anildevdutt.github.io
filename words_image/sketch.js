@@ -52,7 +52,7 @@ function setup() {
     button = createButton('Download Image');
     button.mousePressed(downloadImg);
 
-    imgMain.resize(0, 300);
+    imgMain.resize(0, 200);
 
     w2i();
 }
@@ -61,8 +61,9 @@ function setup() {
 function w2i() {
     let img = createImage(imgMain.width, imgMain.height);
     img.copy(imgMain, 0, 0, imgMain.width, imgMain.height, 0, 0, imgMain.width, imgMain.height);
-    img.filter(THRESHOLD, thrs);    
-    wimg = createGraphics(img.width * scl, img.height * scl);
+    //img.filter(THRESHOLD, thrs);    
+    //wimg = createGraphics(img.width * scl, img.height * scl);
+    wimg = createGraphics(img.width * (scl - (scl / 2)), img.height * (scl - (scl / 2)));
     wimg.background(255);    
     wimg.fill(0);
     wimg.textSize(scl);
@@ -72,10 +73,12 @@ function w2i() {
     for(let i = 0; i < img.height; i++) {
         for(let j = 0; j < img.width; j++) {
             index = (j + i * img.width) * 4;
-            if(img.pixels[index] == 0) {    
-                
-                wimg.text(nextChar(), j * scl, i * scl);
-            }
+            //if(img.pixels[index] == 0) {    
+             
+                wimg.fill(img.pixels[index] , img.pixels[index + 1], img.pixels[index + 2]);                
+                wimg.text(nextChar(), j * (scl - (scl / 2)), i * (scl - (scl / 2)));
+                //wimg.text(nextChar(), j * scl, i * scl);
+            //} 
         }
     }
 

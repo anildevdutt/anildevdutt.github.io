@@ -3,14 +3,14 @@ let particles = [];
 let at;
 
 function preload() {
-  img = loadImage("cat.jpg");
+  img = loadImage("image.jpg");
 }
 
 function setup() {
   createCanvas(1200, 600);
   img.filter(GRAY);
   //image(img, 0, 0, 600, 600);
-  img.resize(200, 200);
+  img.resize(200,0);
   img.loadPixels();
   for(let y = 0; y < img.height; y++) {
     for(let x = 0; x < img.width; x++) {      
@@ -45,7 +45,8 @@ function setup() {
     }
   }
   img.updatePixels();
-  //image(img, 600, 0, 600, 600);
+  //saveCanvas(img, "wordimg", "jpg");
+  image(img, 600, 0, 600, 600);
 }
 
 function addErr(errR, errG, errB, x, y) {  
@@ -58,17 +59,17 @@ function index(x, y)  {
   return (x + y * img.width) * 4;
 }
 
-function draw() {
-  background(255);  
-  for(let p of particles) {    
-    p.update();    
-    p.show();
-  }  
-}
+// function draw() {
+//   background(255);  
+//   for(let p of particles) {    
+//     p.update();    
+//     p.show();
+//   }  
+// }
 
 
-function mousePressed() {
-  for(let p of particles) {
-    p.applyForce();
-  }
-}
+// function mousePressed() {
+//   for(let p of particles) {
+//     p.applyForce();
+//   }
+// }
