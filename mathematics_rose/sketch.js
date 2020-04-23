@@ -9,7 +9,7 @@ function setup() {
   stroke(255);
   _x = width;
   _y = height/2;
-  k = PI;
+  k = 4/9;
 }
 
 function render() {
